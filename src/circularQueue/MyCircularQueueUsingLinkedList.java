@@ -44,5 +44,15 @@ public class MyCircularQueueUsingLinkedList {
 
         return res;
     }
+    public Node peek() {
+        Node response = null;
+        if (!isEmpty()) {
+            response = rear.getNext();
+        }
+        return response;
+    }
 
+    public int getSize() {
+        return size;
+    }
 }
