@@ -24,9 +24,25 @@ public class MyCircularQueueUsingLinkedList {
         }
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         boolean res=false;
         if(rear==null) res=true;
         return res;
     }
+    public Node dequeue() {
+        Node res = null;
+        if (!isEmpty()) {
+
+            res = rear.getNext();
+            size--;
+            if (rear.getNext() == rear) {
+                rear = null;
+            } else {
+                rear.setNext(res.getNext());
+            }
+        }
+
+        return res;
+    }
+
 }
